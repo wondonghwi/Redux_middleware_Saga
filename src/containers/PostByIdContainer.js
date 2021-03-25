@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPostById } from '../modules/posts';
+import { getPostById, goToHome } from '../modules/posts';
 import PostById from '../components/PostById';
 import { reducerUtils } from '../lib/asyncUtils';
 
@@ -17,7 +17,12 @@ const PostByIdContainer = ({ postId }) => {
   if (error) return <div>에러 발생!</div>;
   if (!data) return null;
 
-  return <PostById post={data} />;
+  return (
+    <>
+      <button onClick={() => dispatch(goToHome())}>홈으로 이동</button>
+      <PostById post={data} />
+    </>
+  );
 };
 
 export default PostByIdContainer;

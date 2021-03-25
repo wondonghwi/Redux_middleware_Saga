@@ -6,20 +6,25 @@ import reportWebVitals from './reportWebVitals';
 import { applyMiddleware, createStore } from 'redux';
 import rootReducer from './modules';
 import { Provider } from 'react-redux';
-import { logger } from 'redux-logger/src';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import ReduxThunk from 'redux-thunk';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(ReduxThunk, logger)));
+const customHistory = createBrowserHistory();
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(ReduxThunk.withExtraArgument({ history: customHistory })))
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router history={customHistory}>
       <Provider store={store}>
         <App />
       </Provider>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
