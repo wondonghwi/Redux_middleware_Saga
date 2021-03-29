@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPostById, goToHome } from '../modules/posts';
+import { getPostById, goToHome, printState } from '../modules/posts';
 import PostById from '../components/PostById';
 import { reducerUtils } from '../lib/asyncUtils';
 
@@ -20,6 +20,7 @@ const PostByIdContainer = ({ postId }) => {
   return (
     <>
       <button onClick={() => dispatch(goToHome())}>홈으로 이동</button>
+      <button onClick={() => dispatch(printState())}>상태 출력</button>
       <PostById post={data} />
     </>
   );
