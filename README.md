@@ -1,6 +1,15 @@
-# 리덕스 미들웨어 Thunk , Saga
+# redux-middleware -> Thunk , Saga를 이용한 통신, 최적화 Project
 
-> json-server 설치 <br/>
-> $ yarn global add json-server <br/>
+> 리덕스 미들웨어 Thunk 와 Saga를 사용하여 <br> 
+> 버튼이 눌렀을때 서버와의 통신, 최적화 작업 진행
+
+- 기술스택<br/>
+redux-Thunk <br/> redux-Saga <br/> react-router <br/> axios
+
 > json-server 실행 <br/>
-$ json-server ./data.json --port 4000 <br/>
+$ npx json-server ./data.json --port 4000
+
+- 리스트<br/>
+![](images/Redux-list.png)<br/>
+- 선택되었을때 <br/>
+![](images/Redux-saga.png)
