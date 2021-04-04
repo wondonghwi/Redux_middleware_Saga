@@ -1,10 +1,10 @@
-# redux-middleware -> Thunk , Saga를 이용한 통신, 최적화 Project
+# redux-middleware -> Saga를 이용한 통신, 최적화 Project
 
-> 리덕스 미들웨어 Thunk 와 Saga를 사용하여 <br> 
+> 리덕스 미들웨어 Saga를 사용하여 <br> 
 > 버튼이 눌렀을때 서버와의 통신, 최적화 작업 진행
 
 - 기술스택<br/>
-redux-Thunk <br/> redux-Saga <br/> react-router <br/> axios
+redux-Saga <br/> react-router <br/> axios
 
 > json-server 실행 <br/>
 $ npx json-server ./data.json --port 4000
